@@ -4,3 +4,193 @@
 *:after {
   box-sizing: border-box;
 }
+
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.matais_music_button {
+  color: black;
+  font-size: large;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+}
+
+.login {
+  color: black;
+  font-size: large;
+  text-decoration: none;
+  right: 10px;
+}
+
+/* nav */
+.navbar {
+  font-size: x-large;
+  padding: 20px;
+  background-color: rgb(110, 151, 95);
+  text-align: center;
+  margin-top: 0;
+  margin-left: 8px;
+  margin-right: 8px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  display: inline-block;
+  margin-right: 40px;
+}
+
+.navbar li a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Hide menu icon by default */
+.menu-icon {
+  display: none;
+}
+
+/* background photo */
+html {
+  padding: 20px;
+  background-position: center;
+  background-size: contain;
+  background-image: url(/images/background-image.png);
+}
+
+body {
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+/* media query for mobile devices */
+@media (max-width: 1060px) {
+  html {
+    padding: 0px;
+    background-image: none;
+  }
+  
+  body {
+    border: none;
+    margin: 0;
+  }
+
+  /* navbar stack */
+  .header-stuff {
+    font-size: x-large;
+    padding: 20px;
+    background-color: rgb(110, 151, 95);
+    text-align: center;
+    margin-top: 0;
+    margin-left: 8px;
+    margin-right: 8px;
+    border: 2px solid black;
+    border-radius: 5px;
+  }
+
+  .menu-icon {
+    display: block;
+    margin: 0.2rem 2vw;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: black;
+    cursor: pointer;
+  }
+
+  .navbar {
+    display: none;
+    margin: 0;
+    border: none;
+    padding: 0;
+  }
+
+  .navbar.show {
+    display: block;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+  }
+
+  .navbar li {
+    display: block;
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  .navbar li a {
+    color: black;
+    display: block;
+    padding: 10px 20px;
+  }
+
+  .navbar li a:hover {
+    background-color: rgba(38, 64, 44, 0.3);
+  }
+
+  .navbar li a.active {
+    background-color: rgba(25, 42, 29, 0.3);
+    text-decoration: underline;
+  }
+
+  /* home */
+  .text {
+    color: white;
+    font-size: 6rem;
+    font-family: 'Brush Script MT', cursive;
+  }
+
+  .box {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .box .text {
+    position: absolute;
+    z-index: 999;
+    margin: 0 auto;
+    left: 5%;
+    right: 5%;
+    top: 15vw;
+    text-align: center;
+  }
+}
+
+/* Home page video */
+
+#video-container {
+  width: calc(100% - 16px); /* Subtracting left and right margins */
+  padding-top: 56.25%; /* 16:9 aspect ratio (9 / 16 = 0.5625) */
+  position: relative;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+#video-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  border-radius: 5px;
+}

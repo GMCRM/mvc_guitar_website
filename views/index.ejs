@@ -1,1 +1,29 @@
-<h1>Matai</h1>
+<div id="video-container">
+    <iframe id="video-frame"
+    src="https://www.youtube.com/embed/FWxhf2dS9Ok?si=bftwvd-wAsy_IKpx&autoplay=1"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen
+    autoplay
+    muted>
+  </iframe>
+  </div>
+
+
+  <script>
+    function resizeIframe() {
+  const container = document.getElementById('video-container');
+  const iframe = document.getElementById('video-frame');
+  const width = container.offsetWidth;
+  const height = width * 9 / 16;
+  
+  iframe.style.width = width + 'px';
+  iframe.style.height = height + 'px';
+}
+
+// Call the function initially and on window resize
+window.addEventListener('load', resizeIframe);
+window.addEventListener('resize', resizeIframe);
+  </script>

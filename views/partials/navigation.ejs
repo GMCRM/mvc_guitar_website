@@ -1,8 +1,22 @@
-<nav>
-<ul>
-    <li>Home</li>
-    <li>Sheet Music</li>
-    <li>Matai's Blog</li>
-    <li>Guitar Lessons</li>
-</ul>
-</nav>
+<div class="header-stuff">
+    <button class="menu-icon" id="menu-icon">&#9776;</button>
+    <nav class="navbar">
+        <ul class="nav-menu" id="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sheet Music</a></li>
+            <li><a href="#">Matai's Blog</a></li>
+            <li><a href="#">Guitar Lessons</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.querySelector('.navbar');
+
+        menuIcon.addEventListener('click', function() {
+            navbar.classList.toggle('show');
+        });
+    });
+</script>
