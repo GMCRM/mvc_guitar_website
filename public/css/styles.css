@@ -123,11 +123,7 @@ body {
     padding-right:10px;
     padding-left:30px;
   }
-  html {
-    padding-bottom: 10px;
-    background-image: none;
-    background-color: rgb(110, 151, 95);
-  }
+
   
   body {
     border: none;
