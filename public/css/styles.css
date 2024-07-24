@@ -1,16 +1,15 @@
 /******* Change Box Model ***************/
-*,
+/* *,
 *:before,
 *:after {
   box-sizing: border-box;
-}
+} */
 
 /* header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   padding: 10px;
 }
 
@@ -182,6 +181,8 @@ body {
   position: relative;
   margin-left: 8px;
   margin-right: 8px;
+  margin-bottom: 0;
+  margin-top: 5px;
 }
 
 #video-frame {
@@ -193,4 +194,51 @@ body {
   height: 100%;
   border: 2px solid black;
   border-radius: 5px;
+}
+
+
+/* footer */
+
+
+footer{
+  background-color: rgb(0, 87, 4);
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  background-color: rgb(110, 151, 95);
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 8px;
+  margin-right: 8px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.facebook-img{
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  padding-right:5px;
+  padding-left:5px;
+}
+
+.instagram-img{
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  padding-left:5px;
+  padding-right:5px;
+
+}
+
+.channel-link {
+  color:black;
+  text-decoration: underline;
+  padding-left:70px;
+}
+.copywright{
+  color:black;
+  padding-right:70px;
+  padding-left:30px;
 }
