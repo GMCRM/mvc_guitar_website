@@ -6,6 +6,23 @@
 } */
 @media (min-width: 1060px) {
 
+.facebook-img{
+  border-radius: 50%;
+  height: 27px;
+  width: 27px;
+  padding-right:5px;
+  padding-left:5px;
+  }
+  
+  .instagram-img{
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  padding-left:5px;
+  padding-right:5px;
+  
+  }
+  
   .channel-link {
   padding-left:70px;
   color:black;
@@ -214,6 +231,22 @@ body {
   padding-right:7px;
   padding-left:30px;
   }
+  .facebook-img{
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    padding-right:5px;
+    padding-left:5px;
+    }
+    
+    .instagram-img{
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    padding-left:5px;
+    padding-right:5px;
+    
+    }
 }
 
 /* Home page video */
@@ -256,21 +289,4 @@ margin-left: 8px;
 margin-right: 8px;
 border: 2px solid black;
 border-radius: 5px;
-}
-
-.facebook-img{
-border-radius: 50%;
-height: 27px;
-width: 27px;
-padding-right:5px;
-padding-left:5px;
-}
-
-.instagram-img{
-border-radius: 50%;
-height: 40px;
-width: 40px;
-padding-left:5px;
-padding-right:5px;
-
 }
