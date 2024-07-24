@@ -90,7 +90,7 @@ body {
     border: none;
     margin:0;
     background-color: white;
-    padding-bottom: 1px;
+    padding-bottom: 4px;
   }
 
   /* navbar stack */
@@ -219,8 +219,8 @@ footer{
 
 .facebook-img{
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 27px;
+  width: 27px;
   padding-right:5px;
   padding-left:5px;
 }
