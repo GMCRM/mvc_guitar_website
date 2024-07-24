@@ -81,13 +81,16 @@ body {
 /* media query for mobile devices */
 @media (max-width: 1060px) {
   html {
-    padding: 0px;
+    padding-bottom: 10px;
     background-image: none;
+    background-color: rgb(110, 151, 95);
   }
   
   body {
     border: none;
-    margin: 0;
+    margin:0;
+    background-color: white;
+    padding-bottom: 1px;
   }
 
   /* navbar stack */
@@ -201,11 +204,10 @@ body {
 
 
 footer{
-  background-color: rgb(0, 87, 4);
+  background-color: rgb(110, 151, 95);
   display:flex;
   justify-content: center;
   align-items:center;
-  background-color: rgb(110, 151, 95);
   text-align: center;
   margin-top: 5px;
   margin-bottom: 5px;
