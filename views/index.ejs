@@ -10,7 +10,6 @@
       muted>
     </iframe>
   </div>
-  
   <div id="carousel-container">
     <div class="buttons">
       <button class="button-genre" data-genre="Original">Original</button>
@@ -19,116 +18,108 @@
     </div>
     <div id="genres">
       <div id="Original" class="genre-carousel">
-        <button class="nav-button prev">Previous</button>
         <div class="carousel">
           <div class="slide"><iframe src="https://www.youtube.com/embed/zMhW5jhYZFc?si=Rsd2JC6RYaWoVnnq" title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
           <div class="slide"><iframe src="https://www.youtube.com/embed/M-9USXBKtko" title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
           <div class="slide"><iframe src="https://www.youtube.com/embed/sPEJJsie9uw" title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
           <div class="slide"><iframe src="https://www.youtube.com/embed/GlbuF2M_uAM" title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
         </div>
-        <button class="nav-button next">Forward</button>
+        <div class="nav-buttons">
+          <button class="nav-button prev">Previous</button>
+          <button class="nav-button next">Forward</button>
+        </div>
       </div>
-  
       <div id="Classical" class="genre-carousel hidden">
-        <button class="nav-button prev">Previous</button>
         <div class="carousel">
           <div class="slide"><iframe src="https://www.youtube.com/embed/lhp1xiS4KCs" title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
           <div class="slide"><iframe src="https://www.youtube.com/embed/4byw4raDnBc" title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
           <div class="slide"><iframe src="https://www.youtube.com/embed/8us44syezxc" title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
         </div>
-        <button class="nav-button next">Forward</button>
+        <div class="nav-buttons">
+          <button class="nav-button prev">Previous</button>
+          <button class="nav-button next">Forward</button>
+        </div>
       </div>
-  
+      
       <div id="Cover" class="genre-carousel hidden">
-        <button class="nav-button prev">Previous</button>
         <div class="carousel">
           <div class="slide"><iframe src="https://www.youtube.com/embed/SvrlmXpbp9s" title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
           <div class="slide"><iframe src="https://www.youtube.com/embed/5CZOvYjl42c" title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
           <div class="slide"><iframe src="https://www.youtube.com/embed/oxnfHQEpiBg" title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
         </div>
-        <button class="nav-button next">Forward</button>
+        <div class="nav-buttons">
+          <button class="nav-button prev">Previous</button>
+          <button class="nav-button next">Forward</button>
+        </div>
       </div>
-    </div>
-  </div>
+</div>
+
+
+  
 
 
   <script>
-document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
     const videoContainer = document.getElementById('video-container');
     const videoFrame = document.getElementById('video-frame');
     const genreButtons = document.querySelectorAll('.button-genre');
     const carousels = document.querySelectorAll('.genre-carousel');
-
+  
     function resizeIframe() {
-        const width = videoContainer.offsetWidth;
-        const height = width * 9 / 16;
-        
-        videoFrame.style.width = width + 'px';
-        videoFrame.style.height = height + 'px';
+      const width = videoContainer.offsetWidth;
+      const height = width * 9 / 16;
+      videoFrame.style.width = width + 'px';
+      videoFrame.style.height = height + 'px';
     }
-
+  
     function showGenre(genreId) {
-        carousels.forEach(carousel => {
-            carousel.classList.add('hidden');
-        });
-        document.getElementById(genreId).classList.remove('hidden');
+      carousels.forEach(carousel => {
+        carousel.classList.add('hidden');
+      });
+      document.getElementById(genreId).classList.remove('hidden');
     }
-
+  
     function scrollCarousel(carousel, direction) {
-        const scrollAmount = carousel.offsetWidth;
-        carousel.scrollLeft += direction * scrollAmount;
+      const scrollAmount = carousel.offsetWidth;
+      carousel.scrollLeft += direction * scrollAmount;
     }
-
+  
     // Resize video
     window.addEventListener('load', resizeIframe);
     window.addEventListener('resize', resizeIframe);
-
+  
     // Genre selection
     genreButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            showGenre(this.dataset.genre);
-        });
+      button.addEventListener('click', function() {
+        showGenre(this.dataset.genre);
+      });
     });
-
+  
     // Carousel navigation
     carousels.forEach(carousel => {
-        const slides = carousel.querySelector('.carousel');
-        const prevButton = carousel.querySelector('.prev');
-        const nextButton = carousel.querySelector('.next');
-
-        prevButton.addEventListener('click', () => scrollCarousel(slides, -1));
-        nextButton.addEventListener('click', () => scrollCarousel(slides, 1));
+      const slides = carousel.querySelector('.carousel');
+      const prevButton = carousel.querySelector('.prev');
+      const nextButton = carousel.querySelector('.next');
+  
+      prevButton.addEventListener('click', () => scrollCarousel(slides, -1));
+      nextButton.addEventListener('click', () => scrollCarousel(slides, 1));
+  
+      // Add swipe functionality
+      let touchStartX = 0;
+      let touchEndX = 0;
+  
+      slides.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, false);
+  
+      slides.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchEndX < touchStartX) {
+          scrollCarousel(slides, 1); // Swipe left
+        } else if (touchEndX > touchStartX) {
+          scrollCarousel(slides, -1); // Swipe right
+        }
+      }, false);
     });
-});
-
-// swipe funcionality
-function addSwipeListener(carousel) {
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  carousel.addEventListener('touchstart', e => {
-    touchStartX = e.changedTouches[0].screenX;
-  }, false);
-
-  carousel.addEventListener('touchend', e => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  }, false);
-
-  function handleSwipe() {
-    if (touchEndX < touchStartX) {
-      // Swipe left
-      scrollCarousel(carousel.querySelector('.carousel'), 1);
-    }
-    if (touchEndX > touchStartX) {
-      // Swipe right
-      scrollCarousel(carousel.querySelector('.carousel'), -1);
-    }
-  }
-}
-
-// Add this to your existing DOMContentLoaded event listener
-carousels.forEach(carousel => {
-  addSwipeListener(carousel);
-});
+  });
   </script>
