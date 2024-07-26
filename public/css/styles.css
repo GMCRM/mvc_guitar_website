@@ -45,7 +45,7 @@ header {
   padding: 10px;
   background-color: rgb(110, 151, 95);
   border: 2px solid black;
-  border-radius: 5px;
+  border-radius: 6px;
   margin-left:8px;
   margin-right:8px;
 }
@@ -75,7 +75,7 @@ header {
   margin-left: 8px;
   margin-right: 8px;
   border: 2px solid black;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 .navbar ul {
@@ -147,7 +147,7 @@ body {
     margin-left: 8px;
     margin-right: 8px;
     border: 2px solid black;
-    border-radius: 5px;
+    border-radius: 6px;
   }
 
   .menu-icon {
@@ -270,7 +270,7 @@ right: 0;
 width: 100%;
 height: 100%;
 border: 2px solid black;
-border-radius: 5px;
+border-radius: 6px;
 }
 
 
@@ -289,7 +289,7 @@ margin-bottom: 5px;
 margin-left: 8px;
 margin-right: 8px;
 border: 2px solid black;
-border-radius: 5px;
+border-radius: 6px;
 }
 
 
@@ -309,7 +309,7 @@ border-radius: 5px;
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: rgb(110, 151, 95);
-  border-radius: 5px;
+  border-radius: 6px;
   padding: 20px;
   border: 2px solid black;
   box-sizing: border-box; /* Ensure padding is included in width calculation */
@@ -375,14 +375,14 @@ border-radius: 5px;
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 2px solid black;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 .slide iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 2px solid black;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
   .nav-button {
